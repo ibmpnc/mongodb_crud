@@ -13,13 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bezkoder.spring.data.mongodb.model.BankAccount;
 import com.bezkoder.spring.data.mongodb.service.BankAccountService;
 
+
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RequestMapping(value = "/accounts")
 @AllArgsConstructor
 @RestController
+@Slf4j
 public class BankAccountController {
 	
 	@Autowired
@@ -45,8 +48,11 @@ public class BankAccountController {
 	}
 
 	@PostMapping
-	public Mono save(@RequestBody final BankAccount bankAccount) {
-		System.out.println("will insert the bankAccount record :: "+ bankAccount.getName() );
+	public Mono save(@RequestBody final BankAccount bankAccount) throws InterruptedException {
+		log.debug("will insert the bankAccount record :: "+ bankAccount.getName() );
+		
+		 Thread.sleep(2000L); // delay
+		
 		return bankAccountService.save(bankAccount);
 	}
 
