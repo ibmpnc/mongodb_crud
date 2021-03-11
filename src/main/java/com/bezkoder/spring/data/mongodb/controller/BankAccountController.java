@@ -8,13 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bezkoder.spring.data.mongodb.model.BankAccount;
-import com.bezkoder.spring.data.mongodb.model.Student;
 import com.bezkoder.spring.data.mongodb.service.BankAccountService;
-import com.bezkoder.spring.data.mongodb.service.RegistrationService;
 
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Flux;

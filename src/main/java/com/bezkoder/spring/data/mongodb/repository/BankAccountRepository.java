@@ -4,7 +4,6 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 
 import com.bezkoder.spring.data.mongodb.model.BankAccount;
-import com.bezkoder.spring.data.mongodb.model.Student;
 
 
 
